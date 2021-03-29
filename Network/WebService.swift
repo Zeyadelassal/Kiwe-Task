@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WebServiceURL{
+struct WebServiceURL {
     static let baseURL = "https://api.foursquare.com/v2"
     static let getVenues = "/venues/search"
 }

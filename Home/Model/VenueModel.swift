@@ -12,7 +12,7 @@ struct VenueResponse:Codable {
     let response: VenueData
 }
 
-struct Meta : Codable{
+struct Meta : Codable {
     let code: Int
     let requestID: String
     
