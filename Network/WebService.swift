@@ -14,7 +14,7 @@ struct WebServiceURL {
 
 struct WebServiceParameterKeys {
     static let coordinate = "ll"
-    static let cliendID = "client_id"
+    static let clientID = "client_id"
     static let clientSecret = "client_secret"
     static let v = "v"
 }
