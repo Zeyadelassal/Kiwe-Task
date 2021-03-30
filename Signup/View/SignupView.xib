@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatAccountVC" customModule="Ezuru" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="Kiwe_Task" customModuleProvider="target">
             <connections>
-                <outlet property="OT_Auth_View" destination="eez-6i-zZk" id="u4w-FQ-UyG"/>
-                <outlet property="OT_Email_TF" destination="qGt-LR-I4S" id="5cj-AQ-mh4"/>
-                <outlet property="OT_FullName_TF" destination="2AA-vK-pue" id="FCl-Fu-W5U"/>
-                <outlet property="OT_Password_TF" destination="Rer-1w-BvT" id="Ygi-3k-z2s"/>
-                <outlet property="OT_PhoneNumber_TF" destination="nvb-cg-rI8" id="sJK-db-UZs"/>
-                <outlet property="OT_Sign_BU" destination="kb1-3w-Jr8" id="2Km-j3-ngz"/>
+                <outlet property="ageTextField" destination="JNn-7n-3An" id="Ot0-cQ-tWP"/>
+                <outlet property="firstNameTextField" destination="2AA-vK-pue" id="6f4-gn-RP1"/>
+                <outlet property="lastNameTextField" destination="8h8-Tg-VtH" id="xTC-vj-QOB"/>
+                <outlet property="mailTextField" destination="qGt-LR-I4S" id="bYZ-QN-86V"/>
+                <outlet property="passwordTextField" destination="Rer-1w-BvT" id="X1b-ho-c6C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,13 +26,13 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="C0B-yk-OEL">
-                            <rect key="frame" x="41.5" y="105" width="331" height="43"/>
+                            <rect key="frame" x="41.5" y="90" width="331" height="43"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="highlightedColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jde-ZW-XCs">
-                            <rect key="frame" x="20" y="35" width="40" height="40"/>
+                            <rect key="frame" x="20" y="20" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="BfK-w5-RSS"/>
                                 <constraint firstAttribute="width" constant="40" id="mAR-In-YH2"/>
@@ -43,12 +40,12 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="arrow.left" catalog="system"/>
                             <connections>
-                                <action selector="AC_Back_BU:" destination="-1" eventType="touchUpInside" id="XYL-Rd-YcB"/>
+                                <action selector="backButton:" destination="-1" eventType="touchUpInside" id="eop-al-AWw"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb1-3w-Jr8" customClass="customUIButton" customModule="Ezuru" customModuleProvider="target">
-                            <rect key="frame" x="62" y="480.5" width="290" height="60"/>
-                            <color key="backgroundColor" red="0.085926018660000006" green="0.6553812027" blue="0.59607285259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kb1-3w-Jr8" customClass="customUIButton" customModule="Kiwe_Task" customModuleProvider="target">
+                            <rect key="frame" x="62" y="616.5" width="290" height="59.5"/>
+                            <color key="backgroundColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <state key="normal" title="Sign up">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,14 +56,14 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="AC_SignUp_BU:" destination="-1" eventType="touchUpInside" id="Uyw-PD-a54"/>
+                                <action selector="signup:" destination="-1" eventType="touchUpInside" id="dge-OC-PMF"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f36-pv-pcU">
-                            <rect key="frame" x="40" y="188" width="334" height="272.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f36-pv-pcU">
+                            <rect key="frame" x="40" y="173" width="334" height="383.5"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2AA-vK-pue" customClass="customUITextField" customModule="Ezuru" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="334" height="57"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2AA-vK-pue" customClass="customUITextField" customModule="Kiwe_Task" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="60.5"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="namePhonePad" textContentType="name"/>
@@ -86,8 +83,50 @@
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="person" catalog="system"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGt-LR-I4S" customClass="customUITextField" customModule="Ezuru" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="72" width="334" height="57"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8h8-Tg-VtH" customClass="customUITextField" customModule="Kiwe_Task" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="80.5" width="334" height="61"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="namePhonePad" textContentType="name"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="30"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="3" height="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="person" catalog="system"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNn-7n-3An" customClass="customUITextField" customModule="Kiwe_Task" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="161.5" width="334" height="60.5"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="namePhonePad" textContentType="name"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="30"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="3" height="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="age"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGt-LR-I4S" customClass="customUITextField" customModule="Kiwe_Task" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="242" width="334" height="60.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     <userDefinedRuntimeAttributes>
@@ -103,11 +142,11 @@
                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                             <size key="value" width="3" height="3"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="mail"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="mail" catalog="system"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rer-1w-BvT" customClass="customUITextField" customModule="Ezuru" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="144" width="334" height="56.5"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rer-1w-BvT" customClass="customUITextField" customModule="Kiwe_Task" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="322.5" width="334" height="61"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <userDefinedRuntimeAttributes>
@@ -123,44 +162,13 @@
                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                             <size key="value" width="3" height="3"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="key" catalog="system"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpc-tO-mca" customClass="customUIView" customModule="Ezuru" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="215.5" width="334" height="57"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phonenumber" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvb-cg-rI8" customClass="FPNTextField" customModule="FlagPhoneNumber">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="57"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        </textField>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="nvb-cg-rI8" secondAttribute="trailing" id="HF4-fg-Ijf"/>
-                                        <constraint firstItem="nvb-cg-rI8" firstAttribute="top" secondItem="Qpc-tO-mca" secondAttribute="top" id="Hun-tW-78v"/>
-                                        <constraint firstAttribute="bottom" secondItem="nvb-cg-rI8" secondAttribute="bottom" id="Q6G-u5-NYQ"/>
-                                        <constraint firstItem="nvb-cg-rI8" firstAttribute="leading" secondItem="Qpc-tO-mca" secondAttribute="leading" id="bub-Tb-7iV"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="30"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                            <real key="value" value="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                            <size key="value" width="3" height="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.96070021390000004" green="0.96083813910000004" blue="0.96067017320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="kb1-3w-Jr8" firstAttribute="height" secondItem="eez-6i-zZk" secondAttribute="height" multiplier="0.07" id="0BU-Cs-x3k"/>
                         <constraint firstItem="f36-pv-pcU" firstAttribute="leading" secondItem="eez-6i-zZk" secondAttribute="leading" constant="40" id="6zp-8X-xib"/>
@@ -168,11 +176,11 @@
                         <constraint firstItem="C0B-yk-OEL" firstAttribute="centerX" secondItem="eez-6i-zZk" secondAttribute="centerX" id="BhT-ae-E7e"/>
                         <constraint firstItem="Jde-ZW-XCs" firstAttribute="leading" secondItem="eez-6i-zZk" secondAttribute="leading" constant="20" id="HPb-nm-7ZN"/>
                         <constraint firstItem="kb1-3w-Jr8" firstAttribute="width" secondItem="eez-6i-zZk" secondAttribute="width" multiplier="0.7" id="Iqf-dT-HyV"/>
-                        <constraint firstItem="f36-pv-pcU" firstAttribute="height" secondItem="eez-6i-zZk" secondAttribute="height" multiplier="0.32" id="LN2-ik-7Dj"/>
+                        <constraint firstItem="f36-pv-pcU" firstAttribute="height" secondItem="eez-6i-zZk" secondAttribute="height" multiplier="0.45" id="LN2-ik-7Dj"/>
                         <constraint firstAttribute="trailing" secondItem="f36-pv-pcU" secondAttribute="trailing" constant="40" id="O1T-2D-gnL"/>
-                        <constraint firstItem="kb1-3w-Jr8" firstAttribute="top" secondItem="f36-pv-pcU" secondAttribute="bottom" constant="20" id="QYx-V2-4gD"/>
+                        <constraint firstItem="kb1-3w-Jr8" firstAttribute="top" secondItem="f36-pv-pcU" secondAttribute="bottom" constant="60" id="QYx-V2-4gD"/>
                         <constraint firstItem="C0B-yk-OEL" firstAttribute="width" secondItem="eez-6i-zZk" secondAttribute="width" multiplier="0.799517" id="Uea-gg-hYq"/>
-                        <constraint firstItem="Jde-ZW-XCs" firstAttribute="top" secondItem="eez-6i-zZk" secondAttribute="top" constant="35" id="Ws1-Hd-03B"/>
+                        <constraint firstItem="Jde-ZW-XCs" firstAttribute="top" secondItem="eez-6i-zZk" secondAttribute="top" constant="20" id="Ws1-Hd-03B"/>
                         <constraint firstItem="f36-pv-pcU" firstAttribute="top" secondItem="C0B-yk-OEL" secondAttribute="bottom" constant="40" id="rvD-dD-us4"/>
                         <constraint firstItem="C0B-yk-OEL" firstAttribute="height" secondItem="eez-6i-zZk" secondAttribute="height" multiplier="0.0504695" id="wuE-wN-aZ8"/>
                         <constraint firstItem="kb1-3w-Jr8" firstAttribute="centerX" secondItem="eez-6i-zZk" secondAttribute="centerX" id="xSA-Qv-4vf"/>
@@ -180,7 +188,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.92157727479999996" green="0.9215573668" blue="0.92156130079999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="eez-6i-zZk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5s9-jj-HsQ"/>
                 <constraint firstItem="eez-6i-zZk" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7ok-BB-sA6"/>
@@ -192,25 +200,29 @@
     </objects>
     <designables>
         <designable name="2AA-vK-pue">
-            <size key="intrinsicContentSize" width="78" height="21"/>
+            <size key="intrinsicContentSize" width="113.5" height="21"/>
+        </designable>
+        <designable name="8h8-Tg-VtH">
+            <size key="intrinsicContentSize" width="112.5" height="21"/>
+        </designable>
+        <designable name="JNn-7n-3An">
+            <size key="intrinsicContentSize" width="63.5" height="21"/>
         </designable>
         <designable name="Rer-1w-BvT">
-            <size key="intrinsicContentSize" width="183.5" height="20"/>
+            <size key="intrinsicContentSize" width="105" height="20"/>
         </designable>
         <designable name="kb1-3w-Jr8">
             <size key="intrinsicContentSize" width="62" height="33"/>
         </designable>
         <designable name="qGt-LR-I4S">
-            <size key="intrinsicContentSize" width="152.5" height="21"/>
+            <size key="intrinsicContentSize" width="74" height="21"/>
         </designable>
     </designables>
     <resources>
+        <image name="age" width="50" height="48.5"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="mail" width="32" height="32"/>
-        <image name="password" width="32" height="32"/>
+        <image name="key" catalog="system" width="86" height="128"/>
+        <image name="mail" catalog="system" width="128" height="93"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -42,7 +42,8 @@ class Storage {
     func getUserByMail(mail:String)->Bool{
         do{
             let realm = try Realm()
-            if let user = realm.objects(User.self).filter("email == \(mail)").first{
+            let predicate = NSPredicate(format: "email = [c]%@", mail)
+            if realm.objects(User.self).filter(predicate).first != nil{
                 return true
             }else{
                 return false
