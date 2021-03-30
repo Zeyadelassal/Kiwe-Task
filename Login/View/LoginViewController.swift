@@ -8,10 +8,12 @@
 import UIKit
 
 protocol LoginViewProtocol : Alertable {
-    
+    func loginUser()
 }
 
 class LoginViewController: UIViewController, LoginViewProtocol {
+    
+    var presenter : LoginPresenterProtocol?
     
     @IBOutlet weak var mailTextField: customUITextField!
     @IBOutlet weak var passwordTextField: customUITextField!
@@ -19,15 +21,21 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = LoginPresenter(view: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print(Storage.sharedInstance().getAllUsers())
+    func loginUser(){
+        let email = mailTextField.text!
+        let password = passwordTextField.text!
+        presenter?.login(email:email, password: password)
     }
     
     @IBAction func login(_ sender: Any) {
-        print(Storage.sharedInstance().getUserByMail(mail: mailTextField.text ?? ""))
+        let email = mailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        presenter?.validateLogin(email: email, password: password)
     }
+    
     @IBAction func forgetPassword(_ sender: Any) {
         print("FORGET PASSWORD")
     }

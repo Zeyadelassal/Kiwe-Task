@@ -7,9 +7,13 @@
 
 import UIKit
 
-protocol SignupProtocol{}
+protocol SignupViewProtocol : Alertable{
+    func saveUser()
+}
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, SignupViewProtocol {
+    
+    var presenter : SignupPresenterProtocol?
 
     @IBOutlet weak var firstNameTextField: customUITextField!
     @IBOutlet weak var lastNameTextField: customUITextField!
@@ -19,23 +23,28 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        presenter = SignupPresenter(view: self)
     }
 
+    func saveUser(){
+        let firstName = firstNameTextField.text!
+        let lastName = lastNameTextField.text!
+        let age = ageTextField.text!
+        let email = mailTextField.text!
+        let password = passwordTextField.text!
+        presenter?.saveUser(firstName: firstName, lastName: lastName, age: age, mail: email, password: password)
+    }
     
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func signup(_ sender: Any) {
-        let user = User()
-        user.firstName = firstNameTextField.text ?? ""
-        user.lastName = lastNameTextField.text ?? ""
-        user.age = Int(ageTextField.text ?? "") ?? 0
-        user.email = mailTextField.text ?? ""
-        user.password = passwordTextField.text ?? ""
-        
-        Storage.sharedInstance().save(user: user)
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let age = ageTextField.text ?? ""
+        let email = mailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        presenter?.validateSignup(firstName: firstName, lastName: lastName, age: age, mail: email, password: password)
     }
-    
 }

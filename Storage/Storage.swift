@@ -19,14 +19,15 @@ class Storage {
         return Singleton.shared
     }
     
-    func save(user:User){
+    func save(user:User) -> Bool{
         do{
             let realm = try Realm()
             try realm.write(){
                 realm.add(user)
             }
+            return true
         }catch{
-            
+            return false
         }
     }
     
@@ -39,17 +40,13 @@ class Storage {
         }
     }
     
-    func getUserByMail(mail:String)->Bool{
+    func getUserByMail(mail:String)->User?{
         do{
             let realm = try Realm()
             let predicate = NSPredicate(format: "email = [c]%@", mail)
-            if realm.objects(User.self).filter(predicate).first != nil{
-                return true
-            }else{
-                return false
-            }
+            return realm.objects(User.self).filter(predicate).first
         }catch{
-            return false
+            return nil
         }
     }
 }
