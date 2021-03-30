@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginViewProtocol : Alertable {
     func loginUser()
+    func moveToHomeView()
 }
 
 class LoginViewController: UIViewController, LoginViewProtocol {
@@ -24,10 +25,19 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         presenter = LoginPresenter(view: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     func loginUser(){
         let email = mailTextField.text!
         let password = passwordTextField.text!
         presenter?.login(email:email, password: password)
+    }
+    
+    func moveToHomeView(){
+        navigationController?.pushViewController(HomeViewController(), animated: true)
     }
     
     @IBAction func login(_ sender: Any) {

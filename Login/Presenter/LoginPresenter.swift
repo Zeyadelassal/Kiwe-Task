@@ -49,7 +49,7 @@ class LoginPresenter : LoginPresenterProtocol{
         let user = Storage.sharedInstance().getUserByMail(mail: email)
         if let user = user{
             if(password == user.password){
-                view.showAlert(title: "Login", message: "Logged")
+                view.moveToHomeView()
             }else{
                 view.showAlert(title: "Login", message: "The email or password is invalid")
             }
