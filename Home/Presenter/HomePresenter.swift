@@ -71,7 +71,7 @@ class HomePresenter: HomePresenterProtocol{
     
     private func createNearbyVenuesParameters(coordinate:String)->[String:Any]{
         var parameters : [String:Any] = [:]
-        parameters[WebServiceParameterKeys.coordinate] = "37.785834, -122.406417"
+        parameters[WebServiceParameterKeys.coordinate] = coordinate
         parameters[WebServiceParameterKeys.clientID] = AppConfig.clientIDKey
         parameters[WebServiceParameterKeys.clientSecret] = AppConfig.clientSecrectKey
         parameters[WebServiceParameterKeys.v] = AppConfig.vKey

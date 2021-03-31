@@ -31,6 +31,8 @@ extension HomeViewController:CLLocationManagerDelegate{
         let coordinate = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
         setCurrentLocationOnMap(coordinate: location.coordinate)
         presenter?.getNearbyVenues(coordinate: coordinate)
+        locationManager.stopUpdatingLocation()
+
         reverseGeocodeCoordinate(location.coordinate)
         }
     
