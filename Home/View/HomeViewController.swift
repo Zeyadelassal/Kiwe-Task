@@ -30,22 +30,29 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.alpha = 0.5
         presenter = HomePresenter(view:self)
-        presenter?.getNearbyVenues(coordinate: "String")
         setupLocationManager()
         setupCollectionView()
         setupFloatingButton()
         setupGoogleMapView()
+        showActivityIndicator()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        view.backgroundColor = UIColor(rgb: 0xF9F9F9)
+        venuesCollectionView.backgroundColor = UIColor(rgb: 0xF9F9F9)
         view.bringSubviewToFront(sideMenuView)
         setupNavigationBar()
         sideMenuView.isHidden = true
     }
     
     func reload() {
+        UIView.animate(withDuration:2) {
+            self.view.alpha = 1
+        }
+        stopActivityIndicator()
         venuesCollectionView.reloadData()
     }
     

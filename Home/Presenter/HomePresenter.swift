@@ -65,7 +65,7 @@ class HomePresenter: HomePresenterProtocol{
         cell.setVenueName(venueName: venues[indexPath].name)
         cell.setVenueAddress(venueAddress: venues[indexPath].location.address ?? "")
         cell.setVenueCatName(venueCatName: venues[indexPath].categories.first?.name ?? "No category available")
-        let venueCatImage = (venues[indexPath].categories.first?.icon.prefix ?? "") + "64" + (venues[indexPath].categories.first?.icon.suffix ?? "")
+        let venueCatImage = (venues[indexPath].categories.first?.icon.prefix ?? "") + "32" + (venues[indexPath].categories.first?.icon.suffix ?? "")
         cell.setVenueCatImage(venueCatImage: venueCatImage)
     }
     

@@ -59,4 +59,8 @@ extension HomeViewController: GMSMapViewDelegate{
         infoView.venueCatImage.kf.setImage(with: resource, placeholder: placeHolder)
         return infoView
     }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+      return false
+    }
 }

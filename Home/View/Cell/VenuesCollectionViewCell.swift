@@ -12,12 +12,12 @@ protocol VenuesCollectionViewCellProtocol {
     func setVenueAddress(venueAddress:String)
     func setVenueCatImage(venueCatImage:String)
     func setVenueCatName(venueCatName:String)
-//    func getHeight()->Bool
+    //    func getHeight()->Bool
 }
 
 class VenuesCollectionViewCell: UICollectionViewCell , VenuesCollectionViewCellProtocol{
-        
-  
+    
+    
     @IBOutlet weak var fromStackToAddress: NSLayoutConstraint!
     
     @IBOutlet weak var fromStackToName: NSLayoutConstraint!
@@ -31,7 +31,7 @@ class VenuesCollectionViewCell: UICollectionViewCell , VenuesCollectionViewCellP
         self.venueName.text = venueName
     }
     override func layoutSubviews() {
-
+        
     }
     func setVenueAddress(venueAddress: String) {
         self.venueAddress.text = venueAddress
@@ -47,10 +47,25 @@ class VenuesCollectionViewCell: UICollectionViewCell , VenuesCollectionViewCellP
         let placeHolder = UIImage(named: "image_placeholder")
         self.venueCatImage.kf.indicatorType = .activity
         self.venueCatImage.kf.setImage(with: resource, placeholder: placeHolder)
+        //        let placeHolder = UIImage(named: "image_placeholder")
+        //        self.venueCatImage.image = placeHolder
     }
     
     func setVenueCatName(venueCatName: String) {
         self.venueCatName.text = venueCatName
     }
-
+    
+    func setupCell(){
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOffset = CGSize(width: 2.0, height: 3.0)
+//        layer.shadowRadius = 4.0
+//        layer.shadowOpacity = 0.5
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(rgb: 0x1d3557).cgColor
+        layer.masksToBounds = false
+//        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+    }
+    
 }

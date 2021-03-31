@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
             <connections>
                 <outlet property="mailTextField" destination="m3S-jj-M9P" id="XTE-jM-Yzv"/>
                 <outlet property="passwordTextField" destination="xuv-b2-ief" id="SkE-fY-o7y"/>
+                <outlet property="testImage" destination="ulP-HN-Rad" id="c6x-vy-JNr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -137,6 +139,13 @@
                                 </view>
                             </subviews>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ulP-HN-Rad">
+                            <rect key="frame" x="87" y="664" width="240" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="iIf-LC-wYX"/>
+                                <constraint firstAttribute="width" secondItem="ulP-HN-Rad" secondAttribute="height" multiplier="15:8" id="uDi-tn-coq"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.97767568005181349" green="0.97767568005181349" blue="0.97767568005181349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -144,7 +153,9 @@
                         <constraint firstItem="8gm-i9-V9C" firstAttribute="centerX" secondItem="bgx-5H-fsG" secondAttribute="centerX" id="1GN-0B-a0G"/>
                         <constraint firstItem="ze7-rr-Wx2" firstAttribute="height" secondItem="bgx-5H-fsG" secondAttribute="height" multiplier="0.07" id="2fJ-wk-OHX"/>
                         <constraint firstItem="ze7-rr-Wx2" firstAttribute="width" secondItem="bgx-5H-fsG" secondAttribute="width" multiplier="0.7" id="7Da-nW-hXq"/>
+                        <constraint firstItem="ulP-HN-Rad" firstAttribute="top" secondItem="ze7-rr-Wx2" secondAttribute="bottom" constant="54.5" id="8Dq-RB-y7u"/>
                         <constraint firstItem="hPi-tT-eD4" firstAttribute="centerX" secondItem="bgx-5H-fsG" secondAttribute="centerX" id="Kae-r0-qFe"/>
+                        <constraint firstItem="ulP-HN-Rad" firstAttribute="centerX" secondItem="bgx-5H-fsG" secondAttribute="centerX" id="NI9-GN-8td"/>
                         <constraint firstItem="hPi-tT-eD4" firstAttribute="width" secondItem="bgx-5H-fsG" secondAttribute="width" multiplier="0.5" id="RQX-Lr-YVh"/>
                         <constraint firstItem="jdN-I3-BFj" firstAttribute="height" secondItem="bgx-5H-fsG" secondAttribute="height" multiplier="0.2" id="UHK-xX-a0N"/>
                         <constraint firstItem="8gm-i9-V9C" firstAttribute="top" secondItem="XEh-vS-Sku" secondAttribute="bottom" constant="25" id="Vo7-Lz-2Jz"/>

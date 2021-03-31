@@ -11,7 +11,7 @@ protocol SignupViewProtocol : Alertable{
     func saveUser()
 }
 
-class SignupViewController: UIViewController, SignupViewProtocol {
+class SignupViewController: UIViewController, SignupViewProtoco, UITextFieldDelegate{
     
     var presenter : SignupPresenterProtocol?
 
@@ -25,6 +25,11 @@ class SignupViewController: UIViewController, SignupViewProtocol {
         super.viewDidLoad()
         presenter = SignupPresenter(view: self)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           self.view.endEditing(true)
+           return false
+       }
 
     func saveUser(){
         let firstName = firstNameTextField.text!
