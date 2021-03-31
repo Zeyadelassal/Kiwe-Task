@@ -1,4 +1,3 @@
-//
 //  VenuesCollectionViewCell.swift
 //  Kiwe-Task
 //
@@ -13,20 +12,27 @@ protocol VenuesCollectionViewCellProtocol {
     func setVenueAddress(venueAddress:String)
     func setVenueCatImage(venueCatImage:String)
     func setVenueCatName(venueCatName:String)
+//    func getHeight()->Bool
 }
 
 class VenuesCollectionViewCell: UICollectionViewCell , VenuesCollectionViewCellProtocol{
         
-    @IBOutlet weak var addressLabelHeightConstraint: NSLayoutConstraint!
+  
+    @IBOutlet weak var fromStackToAddress: NSLayoutConstraint!
+    
+    @IBOutlet weak var fromStackToName: NSLayoutConstraint!
     @IBOutlet weak var venueName: UILabel!
     @IBOutlet weak var venueAddress: UILabel!
     @IBOutlet weak var venueCatName: UILabel!
     @IBOutlet weak var venueCatImage: UIImageView!
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     func setVenueName(venueName: String) {
         self.venueName.text = venueName
     }
-    
+    override func layoutSubviews() {
+
+    }
     func setVenueAddress(venueAddress: String) {
         self.venueAddress.text = venueAddress
     }
@@ -46,5 +52,5 @@ class VenuesCollectionViewCell: UICollectionViewCell , VenuesCollectionViewCellP
     func setVenueCatName(venueCatName: String) {
         self.venueCatName.text = venueCatName
     }
-}
 
+}

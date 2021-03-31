@@ -27,7 +27,10 @@ extension HomeViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let location = locations.first else {return}
-        print(location.coordinate)
+        print("LLLLocation",location.coordinate)
+        let coordinate = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
+        setCurrentLocationOnMap(coordinate: location.coordinate)
+        presenter?.getNearbyVenues(coordinate: coordinate)
         reverseGeocodeCoordinate(location.coordinate)
         }
     

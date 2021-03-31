@@ -37,7 +37,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     }
     
     func moveToHomeView(){
-        navigationController?.pushViewController(HomeViewController(), animated: true)
+        let homeVC = HomeViewController()
+        homeVC.userMail = mailTextField.text!
+        navigationController?.pushViewController(homeVC, animated: true)
     }
     
     @IBAction func login(_ sender: Any) {

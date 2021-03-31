@@ -2,13 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Kiwe_Task" customModuleProvider="target">
             <connections>
+                <outlet property="googleMapView" destination="h8D-EP-qY7" id="0NN-cB-L7k"/>
                 <outlet property="sideMenuTrailingConstraint" destination="Jol-aT-MWZ" id="SOs-4W-pa5"/>
                 <outlet property="sideMenuView" destination="fag-hG-T7t" id="po1-XQ-KfX"/>
                 <outlet property="venuesCollectionView" destination="16y-G0-cub" id="YuD-OT-Hqm"/>
@@ -49,6 +52,9 @@
                                     <state key="normal" title="Profile">
                                         <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="gotoProfile:" destination="-1" eventType="touchUpInside" id="ktC-EW-xsc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp8-hj-eyj">
                                     <rect key="frame" x="0.0" y="112" width="153" height="56"/>
@@ -56,6 +62,9 @@
                                     <state key="normal" title="Terms &amp; Conditions">
                                         <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="gotoTerms:" destination="-1" eventType="touchUpInside" id="K9t-wG-egi"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWX-gX-AjS">
                                     <rect key="frame" x="0.0" y="168" width="55" height="56"/>
@@ -63,6 +72,9 @@
                                     <state key="normal" title="Logout">
                                         <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="logout:" destination="-1" eventType="touchUpInside" id="gfk-rS-sXq"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -77,6 +89,10 @@
                         <constraint firstItem="4Lv-zo-V5t" firstAttribute="height" secondItem="fag-hG-T7t" secondAttribute="height" multiplier="0.25" id="xw5-d5-plf"/>
                         <constraint firstItem="9L7-bJ-kfV" firstAttribute="top" secondItem="fag-hG-T7t" secondAttribute="top" constant="5" id="ygn-u3-8kD"/>
                     </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8D-EP-qY7" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="16y-G0-cub">
                     <rect key="frame" x="0.0" y="44" width="414" height="896"/>
@@ -93,11 +109,15 @@
             <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="fag-hG-T7t" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="1ue-3r-oJb"/>
+                <constraint firstItem="h8D-EP-qY7" firstAttribute="leading" secondItem="fag-hG-T7t" secondAttribute="trailing" id="3xS-QN-sby"/>
                 <constraint firstItem="fag-hG-T7t" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="FUs-b5-wba"/>
+                <constraint firstItem="h8D-EP-qY7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JST-42-3HF"/>
                 <constraint firstItem="fag-hG-T7t" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jol-aT-MWZ"/>
                 <constraint firstItem="16y-G0-cub" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="Kwu-m8-zcr"/>
                 <constraint firstItem="fag-hG-T7t" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="R9n-BX-Ej2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h8D-EP-qY7" secondAttribute="bottom" id="aZo-KX-2Kg"/>
                 <constraint firstItem="16y-G0-cub" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gCN-sY-B0P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h8D-EP-qY7" secondAttribute="trailing" id="uVN-Um-l5X"/>
                 <constraint firstItem="16y-G0-cub" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xOF-17-QZY"/>
                 <constraint firstItem="16y-G0-cub" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ykJ-LP-kAG"/>
             </constraints>
@@ -111,5 +131,8 @@
     </designables>
     <resources>
         <image name="profile_placeholder" width="360" height="360"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
