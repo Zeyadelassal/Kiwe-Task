@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
+import JJFloatingActionButton
 
 protocol HomeViewProtocol : Alertable{
-    
+    func reload()
 }
 
 class HomeViewController: UIViewController, HomeViewProtocol{
@@ -19,18 +21,28 @@ class HomeViewController: UIViewController, HomeViewProtocol{
     @IBOutlet weak var venuesCollectionViewLayout: UICollectionViewFlowLayout!
     
     var presenter : HomePresenterProtocol?
+    let locationManager = CLLocationManager()
+    let actionButton = JJFloatingActionButton()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getNearbyVenues()
+        setupLocationManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        view.bringSubviewToFront(sideMenuView)
         presenter = HomePresenter(view:self)
+        presenter?.getNearbyVenues()
         setupNavigationBar()
         setupCollectionView()
+        setupFloatingButton()
         sideMenuView.isHidden = true
+    }
+    
+    func reload() {
+        venuesCollectionView.reloadData()
     }
     
     private func setupNavigationBar(){

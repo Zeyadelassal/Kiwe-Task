@@ -25,7 +25,7 @@
                     <rect key="frame" x="-207" y="44" width="207" height="896"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9L7-bJ-kfV" customClass="CustomImageView" customModule="Kiwe_Task" customModuleProvider="target">
-                            <rect key="frame" x="10.5" y="5" width="186" height="186.5"/>
+                            <rect key="frame" x="26" y="5" width="155" height="155.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="9L7-bJ-kfV" secondAttribute="height" multiplier="1:1" id="mvh-9z-rSR"/>
                             </constraints>
@@ -34,7 +34,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4Lv-zo-V5t">
-                            <rect key="frame" x="10.5" y="216.5" width="186" height="224"/>
+                            <rect key="frame" x="10.5" y="175.5" width="186" height="224"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-0p-fJ0">
                                     <rect key="frame" x="0.0" y="0.0" width="47" height="56"/>
@@ -69,11 +69,11 @@
                     </subviews>
                     <color key="backgroundColor" red="0.21568627450980393" green="0.25882352941176467" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="4Lv-zo-V5t" firstAttribute="top" secondItem="9L7-bJ-kfV" secondAttribute="bottom" constant="25" id="45O-Gb-0V1"/>
+                        <constraint firstItem="4Lv-zo-V5t" firstAttribute="top" secondItem="9L7-bJ-kfV" secondAttribute="bottom" constant="15" id="45O-Gb-0V1"/>
                         <constraint firstItem="4Lv-zo-V5t" firstAttribute="centerX" secondItem="fag-hG-T7t" secondAttribute="centerX" id="4cr-eh-gW4"/>
                         <constraint firstItem="4Lv-zo-V5t" firstAttribute="width" secondItem="fag-hG-T7t" secondAttribute="width" multiplier="0.9" id="Ogv-cG-AGz"/>
                         <constraint firstItem="9L7-bJ-kfV" firstAttribute="centerX" secondItem="fag-hG-T7t" secondAttribute="centerX" id="Pur-f1-jVm"/>
-                        <constraint firstItem="9L7-bJ-kfV" firstAttribute="width" secondItem="fag-hG-T7t" secondAttribute="width" multiplier="0.9" id="xB7-uy-mS8"/>
+                        <constraint firstItem="9L7-bJ-kfV" firstAttribute="width" secondItem="fag-hG-T7t" secondAttribute="width" multiplier="0.75" id="xB7-uy-mS8"/>
                         <constraint firstItem="4Lv-zo-V5t" firstAttribute="height" secondItem="fag-hG-T7t" secondAttribute="height" multiplier="0.25" id="xw5-d5-plf"/>
                         <constraint firstItem="9L7-bJ-kfV" firstAttribute="top" secondItem="fag-hG-T7t" secondAttribute="top" constant="5" id="ygn-u3-8kD"/>
                     </constraints>

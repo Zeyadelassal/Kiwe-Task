@@ -15,19 +15,19 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         venuesCollectionView.dataSource = self
         venuesCollectionView.delegate = self
         let layout = venuesCollectionView.collectionViewLayout
-           if let flowLayout = layout as? UICollectionViewFlowLayout {
-               flowLayout.estimatedItemSize = CGSize(
+        if let flowLayout = layout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(
                 width: view.frame.width - 20 ,
-                   // Make the height a reasonable estimate to
-                   // ensure the scroll bar remains smooth
-                   height: 200
-               )
-           }
-//        venuesCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                // Make the height a reasonable estimate to
+                // ensure the scroll bar remains smooth
+                height: 200
+            )
+        }
+        //        venuesCollectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        presenter?.getVenuesCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,6 +38,11 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 275)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VenueCell", for: indexPath) as! VenuesCollectionViewCell
+        let approximateWidth = view.frame.width
+        let size = CGSize(width: approximateWidth, height: CGFloat.greatestFiniteMagnitude)
+        let estimatedFrame = NSString(string: (presenter?.getVenueAddress(indexPath: indexPath.item))!).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 18)], context: nil)
+        print("fff",title)
+        return CGSize(width: view.frame.size.width , height: estimatedFrame.height + 140)
     }
 }
